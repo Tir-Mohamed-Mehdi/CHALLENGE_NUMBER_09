@@ -1,0 +1,176 @@
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Cyan: #2ab2af;
+  --Bright-Yellow: #c0df34;
+  --Light-Gray: #e5eff5;
+  --Grayish-Blue: #98a6bd;
+
+  --font-family: "Karla", sans-serif;
+
+  --Font-size: 16px;
+
+  --font-weight-400: 400;
+  --font-weight-700: 700;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--Grayish-Blue);
+  background-color: rgb(225, 239, 243);
+}
+
+ul {
+  list-style: none;
+}
+
+.card {
+  margin: 6rem auto;
+  max-width: 27rem;
+  box-shadow: 0 10px 20px rgba(114, 114, 114, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/**********************/
+/** this is the first box */
+/**********************/
+
+.card .card__box {
+  padding: 2rem;
+  background-color: white;
+}
+
+.card .card__box:first-child h2 {
+  color: var(--Cyan);
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.card .card__box:first-child h3 {
+  color: var(--Bright-Yellow);
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.card .card__box:first-child p {
+  line-height: 1.8;
+  font-size: 1.2rem;
+}
+
+/**********************/
+/** this is the second box */
+/**********************/
+
+.card .card__box:nth-child(2) {
+  background-color: var(--Cyan);
+}
+
+.card .card__box:nth-child(2) h3 {
+  color: var(--Light-Gray);
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.3rem;
+}
+
+.card .card__box:nth-child(2) p:first-of-type {
+  color: white;
+  font-size: 2.9rem;
+  font-weight: var(--font-weight-700);
+  position: relative;
+  margin-bottom: 0.8rem;
+}
+
+.card .card__box:nth-child(2) p:first-of-type span {
+  position: absolute;
+  top: 50%;
+  left: 7rem;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  font-weight: var(--font-weight-400);
+  opacity: 0.6;
+  letter-spacing: 0.3px;
+}
+
+.card .card__box:nth-child(2) p:last-of-type {
+  color: var(--Light-Gray);
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.card .card__box:nth-child(2) a:is(:link, :visited) {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  padding: 1rem;
+  color: white;
+  font-size: 1.3rem;
+  border-radius: 4px;
+
+  box-shadow: 0 6px 10px rgb(0, 0, 0, 0.2);
+  width: 100%;
+  background-color: var(--Bright-Yellow);
+}
+
+/**********************/
+/** this is the third box */
+/**********************/
+
+.card .card__box:nth-child(3) {
+  background-color: rgb(42, 178, 175, 0.7);
+}
+
+.card .card__box:nth-child(3) h3 {
+  color: var(--Light-Gray);
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.card .card__box:nth-child(3) ul li {
+  color: var(--Light-Gray);
+  font-weight: var(--font-weight-400);
+  font-size: 1.2rem;
+  line-height: 1.4;
+  opacity: 0.7;
+}
+
+/*! ------------------------ */
+/*! this is the desktop view */
+/*! ------------------------ */
+
+@media (min-width: 992px) {
+  body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+  }
+
+  .card {
+    max-width: 60rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card .card__box {
+    padding: 3rem;
+  }
+
+  .card .card__box:first-child {
+    grid-column: 1 / span 2;
+  }
+
+  .card .card__box:first-child p {
+    font-size: 1.3rem;
+    width: 66ch;
+  }
+}
